@@ -39,6 +39,7 @@ $(document).ready(function () {
         game.physics.arcade.overlap(asset, game.projectile, onProjectileOverlap, null, this);
         
         playerManager.update();
+        win();
     }
 
     function onProjectileOverlap() {
@@ -51,6 +52,7 @@ $(document).ready(function () {
     }
     function decrementLives(){
         if(lives !== 0){
+            alert("you're bad kid")
             lives--;
             game.lives.text = 'Lives ' + lives;            
         } else {
@@ -63,4 +65,10 @@ $(document).ready(function () {
         collectable.kill();
     }
 
+        function win(){
+            if(game.score.text === 'Score: 200'){
+                alert('Congratulations you win!!!                                                                 Refresh to play again.')
+            }
+        }
+        
 });
