@@ -9,7 +9,8 @@
         max: {assetKey: 'max', points: 20},
         steve: {assetKey: 'steve', points: 30},
         grace: {assetKey: 'grace', points: 40},
-        kennedi: {assetKey: 'kennedi', points: 140}
+        token: {assetKey: 'tokin', points: 140}
+
     };
     
     /**
@@ -39,7 +40,7 @@
         // example: 
         createCollectable(type.steve, 20, 170, 100, 0.7);
         createCollectable(type.db, 300, 300, 100, 0.2);
-        createCollectable(type.kennedi, 840, 100, 150, 0.4);
+        createCollectable(type.token, 840, 100, 150, 0.4);
         createCollectable(type.max, 700, 100, 100, 0.4);
         
         
