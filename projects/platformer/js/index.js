@@ -67,7 +67,7 @@ $(document).ready(function () {
 
         function win(){
             if(game.score.text === 'Score: 200'){
-                alert('Congratulations you win!!!                                                                 Refresh to play again.')
+                alert('Congratulations you win!!!                                                                 Now go back and play without breaking it loser!!!')
             }
         }
         
