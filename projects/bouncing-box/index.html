@@ -23,10 +23,10 @@
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
-<body class="board"> {
+<body class="board"> 
 	<!-- HTML for the box -->
-	background-image: url("https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE4MjY3M30");
-}
+	
+
 
 	<div class="box">?</div>
 
@@ -50,8 +50,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX,newPositionY) {
 				box.css("left", newPositionX);
+				box.css('top', newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -66,8 +67,11 @@
 			// TODO 2 - Variable declarations 
 			
 			var positionX = 0;
+			var positionY = 0;
 			var points = 0;
-			
+			var speedX = 0;
+			var speedY = 0;
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -76,7 +80,19 @@
 			function update() {
 				positionX = positionX + 10;
 				
+				positionY = positionY + 10;
+
 				moveBoxTo(positionX);
+
+				positionX = positionX + speedX;
+
+				if (positionY < 0) {speedY = 5;}
+
+                if (positionY > 910) {speedY = -5;}
+
+				if (positionX > 1825) {speedX = -20;}
+
+				if (positionX < 0) {speedX = 5;}
 
 			};
 
@@ -89,7 +105,7 @@
 				positionX = 0;
 				points = points + 1;
 				changeBoxText(points);
-
+				speedX = speedX + 2;
 
 			};
 		})();
