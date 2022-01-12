@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(86, 5, 117);
 			font-size: 300%;
 			text-align: center;
 			display: block;
@@ -25,7 +25,7 @@
 </head>
 <body class="board"> 
 	<!-- HTML for the box -->
-	
+
 
 
 	<div class="box">?</div>
@@ -69,31 +69,31 @@
 			var positionX = 0;
 			var positionY = 0;
 			var points = 0;
-			var speedX = 0;
-			var speedY = 0;
-
+			var speedX = 10;
+			var speedY = 10;
+			var boardHeight = jQuery(window).height(); 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-				positionX = positionX + 10;
-				
-				positionY = positionY + 10;
-
-				moveBoxTo(positionX);
-
 				positionX = positionX + speedX;
+				
+				positionY = positionY + speedY;
 
-				if (positionY < 0) {speedY = 5;}
+				moveBoxTo(positionX,positionY);
 
-                if (positionY > 910) {speedY = -5;}
+				if (positionY < 0) {speedY = -speedY;}
 
-				if (positionX > 1825) {speedX = -20;}
+                if (positionY > boardHeight) {speedY = -speedY;}
 
-				if (positionX < 0) {speedX = 5;}
+				if (positionX > boardWidth) {speedX = -speedX;}
 
+				if (positionX < 0) {speedX = -speedX;}
+
+				if (points > 99){
+					alert("STOP HITTING ME!!!                                                                            NO MORE GAME FOR YOU!!!") }
 			};
 
 			/* 
@@ -105,7 +105,17 @@
 				positionX = 0;
 				points = points + 1;
 				changeBoxText(points);
-				speedX = speedX + 2;
+				if (speedX > 0) {
+					speedX = speedX + 2;
+				} else {
+					speedX = speedX - 2;
+				}
+				if (speedY > 0) {
+					speedY = speedY + 2;
+				} else {
+					speedY = speedY - 2;
+				}
+
 
 			};
 		})();
