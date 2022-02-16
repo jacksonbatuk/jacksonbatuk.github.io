@@ -34,11 +34,10 @@ var init = function (window) {
 
         // TODO 3 / 8 : Call the drawCircle() function 
         drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        
+      for (var i = 0; i <= 1000; i++){
+          drawCircle(i);
+    
+      }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -49,8 +48,9 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
         function update() {
+
             // TODO 4 : Update the circle's position //
-            physikz.updatePosition( circle[0] );
+           /* physikz.updatePosition( circle[0] );
             physikz.updatePosition( circle[1] );
             physikz.updatePosition( circle[2] );
             physikz.updatePosition( circle[3] );
@@ -60,11 +60,14 @@ var init = function (window) {
            game.checkCirclePosition( circle[1]);
            game.checkCirclePosition( circle[2]);
            game.checkCirclePosition( circle[3]);
-           game.checkCirclePosition( circle[4]);
+           game.checkCirclePosition( circle[4]);*/
 
 
             // TODO 9 : Iterate over the array
-           
+        for (var k = 0; k <= circles.length - 1; k++){
+            physikz.updatePosition(circles[k]);
+          game.checkCirclePosition(circles[k]);
+        }
             
         }
     
@@ -109,3 +112,311 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = init;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
