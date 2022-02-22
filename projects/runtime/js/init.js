@@ -31,9 +31,22 @@ var init = function (window) {
     particleManager = opspark.makeParticleManager(app.stage);
     ground = opspark.makeGround(app);
 
-    // TODO 2 : add background
 
+
+
+
+
+    // TODO 2 : add background
+    var background = opspark.makeBackground(app,ground);
+    view.addChild(background);
     
+
+
+
+
+
+
+
     var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!', 
         '20px Arial',
         '#ccc', 'left');
@@ -70,13 +83,22 @@ var init = function (window) {
         });
     }
     
+
+
+
+
     // TODO 1 : add a heads-up display to game
+var hud = opspark.makeHud();
+view.addChild(hud);
+window.hud = hud;
+
+
+
 
 
 
     var game = opspark.createGameManager(app,hud);
     opspark.runLevelInGame(game);
-
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
