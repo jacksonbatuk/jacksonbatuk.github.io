@@ -56,14 +56,14 @@ var background = function (window) {
            moon.scaleY = .50;
            background.addChild(moon);
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why? bc we want the tree in front of the buildings
-            for(var i=0;i<10;++i) {
-                var buildingHeight = 250;
-                var building = draw.rect(120,buildingHeight,'LightGray','Black',1);
-                building.x = 200*i;
+            for(var i = 0; i < 10; i++) {
+                var buildingHeight = 100 + Math.random() * 350;
+                var building = draw.rect(100 + Math.random() * 130,buildingHeight,'LightGray','Black',1);
+                building.x = 230*i;
                 building.y = groundY-buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
-            }
+            }; 
            
             
             
@@ -92,7 +92,10 @@ var background = function (window) {
 }
             
             // TODO 5: Part 2 - Parallax
+           
             
+                // code to do something with each element
+            }
 
         } // end of update function - DO NOT DELETE
         
@@ -111,7 +114,7 @@ var background = function (window) {
         render();
         return background;
     };
-};
+      };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

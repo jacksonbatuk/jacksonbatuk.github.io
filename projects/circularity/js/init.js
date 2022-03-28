@@ -80,7 +80,19 @@ var init = function (window) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
-                circle.x = 10000;
+                circle.x = 0;
+            }
+            //if the circle goes past the left siide of the screen it will be placed on the right 
+            else if (circle.x < 0) {
+                circle.x = canvas.width;
+                //if  the circle goes past the bottem of the screen then it will be placed on the top
+            }
+            else if (circle.y > canvas.height) {
+                circle.y = 0;
+            }
+            // if hte circle goes past the top of the screen it will be placed at the bottem
+            else if (circle.y < 0) {
+                circle.y = canvas.height;
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////

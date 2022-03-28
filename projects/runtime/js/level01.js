@@ -16,9 +16,13 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": groundY },
-                { "type": "sawblade", "x": 600, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },
+                { "type": "sawblade", "x": 400, "y": groundY - 50},
+                { "type": "sawblade", "x": 600, "y": groundY - 50},
+                { "type": "sawblade", "x": 900, "y": groundY - 50},
+
+                 { "type": "enemy", "x": 400, "y": groundY - 50},
+                { "type": "enemy", "x": 600, "y": groundY - 50},
+                { "type": "enemy", "x": 900, "y": groundY - 50},
             ]
         };
         window.levelData = levelData;
@@ -28,7 +32,48 @@ var level01 = function (window) {
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
 
-        
+        function createSawBlade(x, y){
+            var hitZoneSize = 25;
+            var damageFromObsticle = 10;
+            var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+            sawBladeHitZone.x = x;
+            sawBladeHitZone.y = y;
+            game.addGameItem(sawBladeHitZone);
+
+            var obstacleImage = draw.bitmap('img/sawblade.png');
+            sawBladeHitZone.addChild(obstacleImage);
+
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
+            sawBladeHitZone.rotationalVelocity = 5;
+        }
+             createSawBlade(400, 345);
+             createSawBlade(600, 345);
+             createSawBlade(800, 345);
+
+             function createEnemy(x, y){
+            var hitZoneSize = 25;
+            var damageFromObsticle = 10;
+            var enemyHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+            enemyHitZone.x = x;
+            enemyHitZone.y = y;
+            game.addGameItem(enemyHitZone);
+
+            var obstacleImage = draw.bitmap('img/enemy.png');
+            enemyHitZone.addChild(obstacleImage);
+
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
+            enemyHitZone.rotationalVelocity = 0;
+        }
+
+
+
+        var enemy = game.creatGameItem("enemy", 25);
+        var redSquare = draw.rect(50,50,'red');
+        redSquare.x = -25;
+        redSquare.y = -25;
+        enemy.addChild(redSquare);
         
         
         // DO NOT EDIT CODE BELOW HERE
