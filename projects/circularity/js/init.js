@@ -96,7 +96,10 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            
+            function createSawBlade(x, y) {
+                sawBladeHitZone.x 
+                // your code to be reused goes here
+            }  
 
 
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
