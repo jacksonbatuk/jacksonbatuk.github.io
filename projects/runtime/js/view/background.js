@@ -28,6 +28,7 @@ var background = function (window) {
         // ANIMATION VARIABLES HERE:
         var tree;
         var buildings = [];
+
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
       
@@ -88,8 +89,8 @@ var background = function (window) {
             tree.x = tree.x - 1;
 
             if(tree.x < -300) {
-            tree.x = canvasWidth;
-}
+                tree.x = canvasWidth;   
+            }
             
             // TODO 5: Part 2 - Parallax
             for (var i = 0; i < buildings.length; i++){
@@ -100,29 +101,26 @@ var background = function (window) {
             
                 // code to do something with each element
             }
-            
-            
-                // code to do something with each element
-            }
-
+                       
+               
         } // end of update function - DO NOT DELETE
         
         
         
-        /* Make a createjs Container for the background and let it know about the render and upate functions*/
-        background = new createjs.Container();
-        background.resize = render;
-        background.update = update;
-        
-        /* make the background able to respond to resizing and timer updates*/
-        app.addResizeable(background);
-        app.addUpdateable(background);
-        
-        /* render and return the background */
-        render();
-        return background;
+    /* Make a createjs Container for the background and let it know about the render and upate functions*/
+    background = new createjs.Container();
+    background.resize = render;
+    background.update = update;
+    
+    /* make the background able to respond to resizing and timer updates*/
+    app.addResizeable(background);
+    app.addUpdateable(background);
+    
+    /* render and return the background */
+    render();
+    return background;
     };
-      
+};
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
