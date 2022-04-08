@@ -20,7 +20,8 @@ var background = function (window) {
         // useful variables
         var canvasWidth = app.canvas.width;
         var canvasHeight = app.canvas.height;
-        var groundY = ground.y;
+        var groundY = ground.y; 
+         
         
         // container which will be returned
         var background;
@@ -57,10 +58,10 @@ var background = function (window) {
            moon.scaleY = .50;
            background.addChild(moon);
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why? bc we want the tree in front of the buildings
-            for(var i=0;i<5;++i) {
+            for(var i=0;i<10;++i) {
                 var buildingHeight = 300;
                 var building = draw.rect(75,buildingHeight,'LightGray','Black',1);
-                building.x = 200*i;
+                building.x = 250*i;
                 building.y = groundY-buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
@@ -91,11 +92,14 @@ var background = function (window) {
             if(tree.x < -300) {
                 tree.x = canvasWidth;   
             }
+        
+            
+            
             
             // TODO 5: Part 2 - Parallax
             for (var i = 0; i < buildings.length; i++){
                 buildings[i].x = buildings[i].x - 0.5 ; //moves the buildings to the left
-                if (buildings[i].x < -150) { //creates an if statement thats activated when buildings' x position is equal to zero
+                if (buildings[i].x < -100) { //creates an if statement thats activated when buildings' x position is equal to zero
                     buildings[i].x = canvasWidth + 200; //when a building moves off the left of the screen it moves it back to the right side 
                 }
             
